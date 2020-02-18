@@ -1,9 +1,13 @@
-#!/usr/bin/with-contenv sh
+#!/bin/sh
 
 echo "------------------------------------------------------------"
 echo "------------------------------------------------------------"
-echo "nodebook init at - $(date)"
+if [ "$(find /var/lib/docker |  wc -l)" -gt 1 ]
+then
+  echo "-- Rehydrating /var/lib/docker --"
+  cp -r /_docker/ /var/lib/docker/
+else
+  echo "-- No need to rehydrate /var/lib/docker --"
+fi
 echo "------------------------------------------------------------"
 echo "------------------------------------------------------------"
-
-/app/nodebook-linux web --bindaddress=0.0.0.0 --port=80 --docker /notebooks

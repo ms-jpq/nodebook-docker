@@ -11,6 +11,7 @@ docker run -it --rm \
    --privileged \
    -p 8080:80 \
    -v "$PWD"/docker:/var/lib/docker \
+   -v "$PWD"/notebooks:/notebooks \
    msjpq/nodebook
 ```
 

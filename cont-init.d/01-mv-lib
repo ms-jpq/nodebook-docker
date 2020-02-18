@@ -4,10 +4,10 @@ echo "------------------------------------------------------------"
 echo "------------------------------------------------------------"
 if [ "$(find /var/lib/docker |  wc -l)" -gt 1 ]
 then
+  echo "-- No need to rehydrate /var/lib/docker --"
+else
   echo "-- Rehydrating /var/lib/docker --"
   cp -r /_docker/ /var/lib/docker/
-else
-  echo "-- No need to rehydrate /var/lib/docker --"
 fi
 echo "------------------------------------------------------------"
 echo "------------------------------------------------------------"

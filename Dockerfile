@@ -17,5 +17,5 @@ ADD https://github.com/netgusto/nodebook/releases/download/0.2.0/nodebook-linux 
 RUN chmod +x /app/nodebook-linux
 
 
-COPY services.d/ /etc/services.d/
+COPY docker/root /
 ENTRYPOINT ["/init"]

@@ -3,6 +3,12 @@
 set -eu
 set -o pipefail
 
-docker tag "$1" msjpq/nodebook:latest
+IMAGE="msjpq/nodebook:latest"
 
-docker push msjpq/nodebook:latest
+cd "$(dirname "$0")"
+docker build -t "$IMAGE" .
+
+if [[ $# -gt 0 ]]
+then
+  docker push "$IMAGE"
+fi

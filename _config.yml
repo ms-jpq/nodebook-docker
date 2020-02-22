@@ -2,7 +2,7 @@ theme: jekyll-theme-cayman
 
 title: Nodebook - Docker in Docker
 
-showcase: True
+showcase: False
 
 desc: >-
   Dockerized version of Nodebook

@@ -15,6 +15,8 @@ docker run -it --rm \
    msjpq/nodebook
 ```
 
+Remove `-v "$PWD"/docker:/var/lib/docker` for Mac.
+
 ## Misc
 
 `--privileged` is required to Docker in Docker to work

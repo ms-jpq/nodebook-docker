@@ -6,6 +6,7 @@ ARG NODEBOOK_VER="0.2.0"
 RUN mkdir /_install
 
 
+# Update this to 2 Step unzip @ ubuntu 20.04
 ADD https://github.com/just-containers/s6-overlay/releases/download/v${S6_VER}/s6-overlay-amd64.tar.gz /_install
 RUN gunzip -c /_install/s6-overlay-amd64.tar.gz | tar -xf - -C / && \
     mkdir -p /app /notebooks
